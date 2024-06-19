@@ -41,12 +41,24 @@ public class MyProject1 {
         myDog.bark();
         int[] a = {1,2,3,4};
         int[] b = {5,6,7,8};
-        int[] result = twoSum(a,b,11);
-        System.out.println(result[0]);
-        System.out.println(result[1]);
+        try {
+        	int[] result = twoSum(a,b,22);
+            System.out.println(result[0]);
+            System.out.println(result[1]);
+        } catch(java.lang.NullPointerException err) {
+        	System.out.println("target too big");
+        } 
+ 
+        //calling maxNum
+        int[] c = {4,8,12,1,1,1};
+        System.out.println(maxNum(c));
+        
     }
     
     public static int[] twoSum(int[] num1, int[] num2, int target) {
+    	if (target > maxNum(num1) + maxNum (num2)) {
+    		return null;
+    	}
     	for (int i = 0; i < num1.length; i++) {
     		for (int j = i+1; j < num2.length; j++)
     			if (num1 [i] + num2 [j] == target)
@@ -54,6 +66,17 @@ public class MyProject1 {
     	}
     	return null;
 
+    }
+    public static int maxNum(int[] array1) {
+    	int maxnum = -1;
+    	for (int i=0; i < array1.length; i++) {
+    		if (maxnum < array1[i]) {
+    			maxnum = array1[i];
+    		}
+    			
+    	}
+    	return maxnum;
+    	
     }
     
 }
