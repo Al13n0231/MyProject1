@@ -39,8 +39,14 @@ public class MyProject1 {
         // 4. instantiate Dog class and call a method from that class
         DogClass myDog = new DogClass("Buddy");
         myDog.bark();
+        int[] a = {1,2,3,4};
+        int[] b = {5,6,7,8};
+        int[] result = twoSum(a,b,11);
+        System.out.println(result[0]);
+        System.out.println(result[1]);
     }
-    public int[] twoSum(int[] num1, int[] num2, int target) {
+    
+    public static int[] twoSum(int[] num1, int[] num2, int target) {
     	for (int i = 0; i < num1.length; i++) {
     		for (int j = i+1; j < num2.length; j++)
     			if (num1 [i] + num2 [j] == target)
@@ -49,6 +55,7 @@ public class MyProject1 {
     	return null;
 
     }
+    
 }
 
 // June 17 assignment 2
